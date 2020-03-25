@@ -1,5 +1,3 @@
-import com.google.inject.Inject;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -7,13 +5,13 @@ import java.net.URLConnection;
 
 
 public class URLFetcher implements FetchInterface{
+    URL url;
 
-
-    @Inject
-    public URLFetcher() throws  IOException{
+    public URLFetcher(URL url) throws  IOException{
+       this.url = url;
     }
 
-    public String fetch(URL url) throws IOException {
+    public String fetch() throws IOException {
 
 		URLConnection connection = url.openConnection();
 		

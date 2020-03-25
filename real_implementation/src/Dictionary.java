@@ -1,5 +1,3 @@
-import com.google.inject.Inject;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
@@ -10,9 +8,9 @@ import java.util.TreeSet;
 public class Dictionary  implements DictionaryInterface{
 
 	private Set<String> words;
-    @Inject
-	public Dictionary(String dict) throws IOException {
-        try (Scanner scanner = new Scanner(new File("dict.txt"))) {
+
+	public Dictionary(String fileName) throws IOException {
+        try (Scanner scanner = new Scanner(new File(fileName))) {
             words = new TreeSet<>();
             while (scanner.hasNextLine()) {
                 String word = scanner.nextLine().trim();
@@ -24,6 +22,5 @@ public class Dictionary  implements DictionaryInterface{
 	public boolean isValidWord(String word) {
 		return words.contains(word);
 	}
-
 }
 

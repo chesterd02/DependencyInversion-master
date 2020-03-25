@@ -4,8 +4,7 @@ import java.util.SortedMap;
 
 public interface SpellCheckerInterface {
 
-    SortedMap<String, Integer> check(URL url) throws IOException;
-    void makeDict(String dict);
+    SortedMap<String, Integer> check() throws IOException;
 
 
 }

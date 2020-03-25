@@ -3,6 +3,5 @@ import java.net.URL;
 
 public interface FetchInterface {
 
-    String fetch(URL url) throws IOException;
-
+    String fetch() throws IOException;
 }
